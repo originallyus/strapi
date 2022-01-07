@@ -29,7 +29,7 @@ const mapErrorsAndStatus = [
 
 const formatApplicationError = error => {
   const errorAndStatus = mapErrorsAndStatus.find(pair => error instanceof pair.classError);
-  const status = errorAndStatus ? errorAndStatus.status : 400;
+  const status = errorAndStatus ? errorAndStatus.status : error.status ?? 400;
 
   return {
     status,
